@@ -1,0 +1,60 @@
+---
+title: "INFO550 Final Project"
+author: "Chenxi Du"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+## Introduction
+  The heart disease dataset used in this project is a combination of 5 popular heart disease datasets, which is find on IEEEDataPort website with 578 observations after deleting duplicates.  \par
+  The original dataset contains one dependent variable indicating whether the participant has heart disease or not and will be used as outcome variable, nine independent variables which are possible risk factors or symptoms for heart disease (including age, gender, cholesterol level, blood sugar level, blood pressure level, heart rate, chest pain type, whether the participant experiences exercise induced angina, electrocardiogram result). \par
+  The main focus of this project would be identify the correlation between all covariates and the heart disease condition, the analysis plan is as follows: \par
+- Preliminary analysis with figures 
+- Univariate analysis
+- Correlation analysis to identify colinearity
+- Build logistic regression model
+
+
+## Preliminary analysis with figures
+As chest pain, exercise induced angina, electrocardiogram abnormal are already known symptoms, and cholesterol level, blood sugar level, blood pressure level and heart rate are well explored risk factors, so for the preliminary analysis with figures, the relationship between age and heart disease, with correlation between gender and heart disease are explored.  \par
+```{r, barplot}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics( here::here("output/barplot.png") )
+```
+From figure.1 above, female have a lower percentage of having heart disease while male have a higher percentage of having heart disease. We can possibly assume that the probability of having heart disease is higher in male group. \par
+```{r, distribution plot}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics( here::here("output/distplot.png") )
+```
+The figure.2 above shows the distribution of age among heart disease groups. The distribution groups are not very coincide and the mean values are slightly different, this might not be statistically meaningful but might be clinically important. \par
+
+
+
+## Univariate analysis
+```{r, univariate analysis}
+readRDS(file = here::here("output/univar.rds"))
+```
+All the covariates included showed a significant difference between people with heart disease and without heart disease according to the univariate analysis above. Thus, they should all be included into the final logistic regression model. 
+
+
+
+## Correlation analysis for continuous variables
+```{r, correlation plot}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics( here::here("output/corplot.png") )
+```
+The correaltion between each two variables are acceptable. We can directely include the raw data into the logitstic regression. However, since the scale of the continuous variables are relatively large and can cause the correlation coefficients drop under 0.01, standardization is still needed. 
+
+
+
+## Build logistic regression
+```{r, logistic regression}
+readRDS(file = here::here("output/logit_reg.rds"))
+```
