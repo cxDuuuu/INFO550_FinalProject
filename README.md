@@ -1,7 +1,7 @@
 # Generate the Final Report
 
-`run make FinalProject.html in terminal` to generate the final html report \\
-`run make install in terminal` to restore the package environment \\
+`run make FinalProject.html in terminal` to generate the final html report   
+`run make install in terminal` to restore the package environment   
 The report include: 
 - Preliminary analysis with figures 
 - Univariate analysis
