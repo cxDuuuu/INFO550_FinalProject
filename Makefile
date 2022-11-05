@@ -21,3 +21,7 @@ output/data.rds: code/01_data_manipulation.R
 .PHONY: clean
 clean:
 	rm -f output/*.* && rm -f FinalProject.html
+	
+.PHONY: install
+install: 
+	Rscript -e "renv::restore(prompt = FALSE)"
