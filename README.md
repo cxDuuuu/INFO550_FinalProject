@@ -1,11 +1,11 @@
 # Generate the Final Report
 
-## build Docker image
-run `make project_image` to build the Docker image
+## Build Docker image
+Run `make project_image` to build the Docker image
 
-## build the report 
+## Build the report 
 
-run `make final_report/report.html` in terminal to generate the final html report in Docker image and synchronize it to local folder called "final_report"
+After build the Docker image, run `make final_report/report.html` in terminal to generate the final html report in Docker image and synchronize it to local folder called "final_report"
 
 
 # Report Description
