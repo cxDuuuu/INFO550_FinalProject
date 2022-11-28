@@ -1,13 +1,19 @@
 # Generate the Final Report
 
-`run make FinalProject.html in terminal` to generate the final html report   
-`run make install in terminal` to restore the package environment   
+## build Docker image
+run `make project_image` to build the Docker image
+
+## build the report 
+
+run `make final_report/report.html` in terminal to generate the final html report in Docker image and synchronize it to local folder called "final_report"
+
+
+# Report Description
 The report include: 
 - Preliminary analysis with figures 
 - Univariate analysis
 - Correlation analysis to identify colinearity
 - Build logistic regression model
-
 
 
 # Code Description
