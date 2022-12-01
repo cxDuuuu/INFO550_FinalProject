@@ -1,5 +1,9 @@
 FROM  rocker/r-ubuntu
 
+# install pandoc
+RUN apt-get update 
+RUN apt-get install -y pandoc libcurl4-openssl-dev
+
 # set packages
 RUN Rscript -e "install.packages('config')"
 RUN Rscript -e "install.packages('knitr')"
@@ -12,9 +16,6 @@ RUN Rscript -e "install.packages('dplyr')"
 RUN Rscript -e "install.packages('car')"
 RUN Rscript -e "install.packages('plyr')"
 
-# install pandoc
-RUN apt-get update 
-RUN apt-get install -y pandoc
 
 # create project folder and set set work dir
 RUN mkdir /project
@@ -43,4 +44,4 @@ COPY Makefile .
 RUN mkdir final_report
 
 # add entry point 
-CMD make && move report.html final_report
+CMD make && move FinalProject.html final_report
