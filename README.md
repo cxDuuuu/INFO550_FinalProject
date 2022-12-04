@@ -2,10 +2,11 @@
 
 ## Build Docker image
 Run `make project_image` to build the Docker image
+Or run `docker pull cxduuuu/project_image` to pull built image from Docker Hub
 
 ## Build the report 
 
-After build the Docker image, run `make final_report/report.html` in terminal to generate the final html report in Docker image and synchronize it to local folder called "final_report"
+After built the Docker image, run `make final_report/report.html` in terminal to generate the final html report in Docker image and synchronize it to local folder called "final_report"
 
 
 # Report Description
